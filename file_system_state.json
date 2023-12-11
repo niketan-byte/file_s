@@ -1,0 +1,17 @@
+{
+  "/": {
+    "type": "directory",
+    "contents": {}
+  },
+  "contents": {
+    "mkdir_testing": {
+      "type": "directory",
+      "contents": {
+        "mkdir_nested_testing": {
+          "type": "directory",
+          "contents": {}
+        }
+      }
+    }
+  }
+}
