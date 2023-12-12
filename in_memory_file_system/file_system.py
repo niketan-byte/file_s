@@ -51,7 +51,7 @@ class InMemoryFileSystem:
         # Support relative paths (.., ../), absolute paths (/), and handle errors
 
         # Handle special cases for root directory
-        if path == '/':
+        if path == '/' or path == '~':
             self.current_directory = '/'
             return True
 
@@ -150,7 +150,7 @@ class InMemoryFileSystem:
         parent_directory['contents'][new_file_name] = {'type': 'file', 'contents': ''}
         return True
 
-    def echo(self, text: str, file_name: str) -> bool:
+    def echo(self, text: str, file_name: str, delete_content: bool = False) -> bool:
         # Write text to a file
         # Create the file if it doesn't exist
 
@@ -169,9 +169,14 @@ class InMemoryFileSystem:
 
             parent_directory['contents'][new_file_name] = {'type': 'file', 'contents': ''}
 
-        # Write text to the file
-        target_file = get_directory(self.file_system, file_path)
-        target_file['contents'] = text
+        # Delete content if specified
+        if delete_content:
+            target_file = get_directory(self.file_system, file_path)
+            target_file['contents'] = ''
+        else:
+            # Write text to the file
+            target_file = get_directory(self.file_system, file_path)
+            target_file['contents'] = text.replace("\\n", "\n")
 
         return True
 

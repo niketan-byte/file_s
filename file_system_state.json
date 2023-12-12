@@ -7,11 +7,15 @@
     "mkdir_testing": {
       "type": "directory",
       "contents": {
-        "mkdir_nested_testing": {
+        "nested_testing": {
           "type": "directory",
           "contents": {}
         }
       }
+    },
+    "hello1.txt": {
+      "type": "file",
+      "contents": " 12345 \nQWER \nqwere \nnwef \n!@#$$@ \n@@ \n+"
     }
   }
 }
