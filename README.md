@@ -69,6 +69,9 @@ The project is organized into three main files:
 
 **main.py:** Implements FastAPI routes to expose the functionality of the in-memory file system over HTTP. Each route corresponds to a specific operation, and the API documentation is generated automatically.
 
+## Google Doc Link
+
+The project description, installation guide, implementation details and other instruction are included in this [Google doc link](https://docs.google.com/document/d/1CIGCFLoco8ngd3JAKmg0E5GyHgVZPjDcxcKNu-q7Se0/edit)
 
 ## License
 
